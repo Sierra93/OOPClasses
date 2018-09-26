@@ -1,0 +1,77 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AnimalClasses
+{
+    public abstract class Animals
+    {
+        public string Name { get; set; }
+
+        public string Type { get; set; } 
+
+        public abstract void Rachet();
+    }
+
+    public class Hich : Animals
+    {
+        public Hich(string name)
+        {
+            Name = name;
+            Type = "Hichnie zivotnie";
+        }
+
+        public override void Rachet()
+        {
+            Console.WriteLine("Type: " + Type + "\n" + "Name: " + Name + "\n");
+        }
+    }
+
+    public class Vseyadnie : Animals
+    {
+        public Vseyadnie(string name)
+        {
+            Name = name;
+            Type = "Vseyadnie zivotnie";
+        }
+
+        public override void Rachet()
+        {
+            Console.WriteLine("Type: " + Type + "\n" + "Name: " + Name + "\n");
+        }
+    }
+
+    public class Travoyadnie : Animals
+    {
+        public Travoyadnie(string name)
+        {
+            Name = name;
+            Type = "Travoyadnie zivotnie";
+        }
+
+        public override void Rachet()
+        {
+            Console.WriteLine("Type: " + Type + "\n" + "Name: " + Name + "\n");
+        }
+    }
+
+    public class MainCLass
+    {
+        public static void Main()
+        {
+            List<Animals> animals = new List<Animals>();
+            animals.Add(new Hich("Tiger"));
+            animals.Add(new Vseyadnie("Caban"));
+            animals.Add(new Travoyadnie("Olen"));
+
+            foreach (Animals animal in animals)
+            {
+                animal.Rachet();
+            }
+           
+            Console.ReadKey();
+        }
+    }
+}
